@@ -1,4 +1,4 @@
-# Feature Selection 
+# Features
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -7,6 +7,7 @@ Subsequently, the body linear acceleration and angular velocity were derived in 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
 ## These signals were used to estimate variables of the feature vector for each pattern:  
+
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 tBodyAcc-XYZ
@@ -30,7 +31,6 @@ fBodyGyroJerkMag
 ## The set of variables that were estimated from these signals are: 
 
 mean(): Mean value
-mean(): Mean value
 std(): Standard deviation
 mad(): Median absolute deviation 
 max(): Largest value in array
@@ -48,6 +48,10 @@ kurtosis(): kurtosis of the frequency domain signal
 bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
 angle(): Angle between to vectors.
 
+### Transformations
+Note that, only mean(), meanFreq(), and std() were kept for 
+the purposes of this assignment. The rest were removed.
+
 ## Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
 gravityMean
@@ -55,4 +59,19 @@ tBodyAccMean
 tBodyAccJerkMean
 tBodyGyroMean
 tBodyGyroJerkMean
+
+The complete list of variables of each feature vector is available in 'features.txt'
+
+# Activity Labels
+
+Note that, in the original dataset these activities appear their numeric identifiers. I have changed the codes to the character strings they represent, to make it easier for a person to read.
+
+1 WALKING
+2 WALKING_UPSTAIRS
+3 WALKING_DOWNSTAIRS
+4 SITTING
+5 STANDING
+6 LAYING 
+
+
 

@@ -2,16 +2,16 @@
 # https://class.coursera.org/getdata-007/forum/thread?thread_id=49#comment-570
 
 #Read in the Data
-activity_labels <- read.table("./activity_labels.txt")
-features <- read.table("./features.txt")    
+activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")
+features <- read.table("./UCI HAR Dataset/features.txt")    
 
-x_train <- read.table("./train/X_train.txt")
-x_test <- read.table("./test/X_test.txt")
-subject_train <- read.table("./train/subject_train.txt")
+x_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
+x_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
+subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 
-y_train <- read.table("./train/y_train.txt")
-y_test <- read.table("./test/y_test.txt")
-subject_test <- read.table("./test/subject_test.txt")
+y_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
+y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
+subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
 
 # organise matching data
 x_bind <- rbind(x_train, x_test)
@@ -46,11 +46,4 @@ if(grepl("1", all_bind[i, 48]) == TRUE) {
   all_bind$Activity[i] <- "Laying"
 }
 
-## Still to D
-# 5. From the data set in step 4, creates a second, independent tidy data set with the 
-# average of each variable for each activity and each subject.
-
-install.packages("reshape")
-library(reshape)
-
-splited <- split(all_bind$Subject, all_bind$Activity)
+write.table(all_bind, file="tidy.txt") 
