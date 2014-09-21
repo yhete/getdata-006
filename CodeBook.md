@@ -67,11 +67,17 @@ The complete list of variables of each feature vector is available in 'features.
 Note that, in the original dataset these activities appear their numeric identifiers. I have changed the codes to the character strings they represent, to make it easier for a person to read.
 
 1 WALKING
+
 2 WALKING_UPSTAIRS
+
 3 WALKING_DOWNSTAIRS
+
 4 SITTING
+
 5 STANDING
+
 6 LAYING 
+
 
 
 
